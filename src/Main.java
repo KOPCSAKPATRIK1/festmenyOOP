@@ -11,10 +11,10 @@ public class Main
         Festmeny f2 = new Festmeny("proba2", "OptimusPrimNigga", "Transniggas");
         Festmenyek festmenyek = new Festmenyek(new Festmeny[]{f1, f2});
         Scanner sc = new Scanner(System.in);
+        Festmenyek festmenyek2 = null;
 
         System.out.print("Hany darab festmeny szeretnel hozzaadni?\n");
         int db = sc.nextInt();
-        Festmeny[] fTomb = new Festmeny[db];
         for (int i = 0 ; i < db; i++)
         {
             System.out.print("add meg a festmeny cimet\n");
@@ -24,13 +24,13 @@ public class Main
             System.out.print("add meg a festmeny stilusat\n");
             String ujstilus =  sc.next();
             Festmeny ujFestmeny = new Festmeny(ujcim, ujfesto, ujstilus);
-            fTomb[i] = ujFestmeny;
+            festmenyek.getFestmenyek().add(ujFestmeny);
         }
 
         try
         {
-            Festmenyek festmenyek2 = new Festmenyek("festmenyek.txt");
-            System.out.println(festmenyek2);
+            festmenyek2 = new Festmenyek("festmenyek.txt");
+            festmenyek.getFestmenyek().addAll(festmenyek2.getFestmenyek());
         }
         catch (FileNotFoundException e)
         {
@@ -39,6 +39,12 @@ public class Main
         catch (IOException e)
         {
             System.err.println("hiba");
+        }
+
+        System.out.println(festmenyek2);
+        for (int i = 0; i < 20; i++)
+        {
+            festmenyek2.getFestmenyek().get(i);
         }
 
 

@@ -30,6 +30,12 @@ public class Festmenyek
         br.close();
         fr.close();
     }
+
+    public List<Festmeny> getFestmenyek()
+    {
+        return festmenyek;
+    }
+
     @Override
     public String toString()
     {
