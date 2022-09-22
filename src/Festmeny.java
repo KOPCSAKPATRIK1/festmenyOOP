@@ -71,6 +71,26 @@ public class Festmeny
         }
     }
 
+    public void licit(int merek)
+    {
+        if (merek > 100 || merek < 10)
+        {
+            System.out.print("hibas adatot adott meg");
+        }
+        else if (this.licitekSzama == 0)
+        {
+            this.legmagasabbLicit = 100;
+            double szazalek = merek/100;
+            this.legmagasabbLicit = this.legmagasabbLicit+(int)szazalek;
+            this.legmagasabbLicit =(int) Math.round(this.legmagasabbLicit/100.0) * 100;
+            this.licitekSzama++;
+            this.legutolsoLicitIdeje = LocalDateTime.now();
+        }
+        else
+        {
+            licit();
+        }
+    }
 
 
 
