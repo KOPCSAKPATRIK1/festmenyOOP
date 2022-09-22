@@ -29,8 +29,8 @@ public class Main
 
         try
         {
-            Festmenyek fs3 = new Festmenyek("festmenyek.txt");
-            System.out.println(fs3);
+            Festmenyek festmenyek2 = new Festmenyek("festmenyek.txt");
+            System.out.println(festmenyek2);
         }
         catch (FileNotFoundException e)
         {
