@@ -95,9 +95,11 @@ public class Festmeny
     @Override
     public  String toString()
     {
-        if (elkelt){
+        if (elkelt)
+        {
             return String.format("%s: %s (%s)\nelkelt\n%d $ - %s (összesen: %d db)",this.festo,this.cim,this.stilus,this.legmagasabbLicit,this.legutolsoLicitIdeje,this.licitekSzama);
-        }else{
+        }else
+        {
             return String.format("%s: %s (%s)\n%d $ - %s (összesen: %d db)",this.festo,this.cim,this.stilus,this.legmagasabbLicit,this.legutolsoLicitIdeje,this.licitekSzama);
         }
     }
