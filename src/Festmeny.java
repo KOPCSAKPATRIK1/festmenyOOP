@@ -52,21 +52,24 @@ public class Festmeny
 
     public void licit()
     {
-        if (this.elkelt = false)
+        if (this.elkelt)
         {
             System.out.print("Elkelt");
         }
         else if (this.licitekSzama == 0)
         {
             this.legmagasabbLicit = 100;
-            this.licitekSzama ++;
+            legmagasabbLicit++;
             this.legmagasabbLicit =(int) Math.round(this.legmagasabbLicit/100.0) * 100;
+            this.licitekSzama++;
             this.legutolsoLicitIdeje = LocalDateTime.now();
         }
         else
         {
-            this.legmagasabbLicit = (int) (this.legmagasabbLicit * 1.1);
+            double szazalek = this.legmagasabbLicit*0.1;
+            this.legmagasabbLicit = this.legmagasabbLicit + (int)szazalek;
             this.legmagasabbLicit =(int) Math.round(this.legmagasabbLicit/100.0) * 100;
+            this.licitekSzama++;
             this.legutolsoLicitIdeje = LocalDateTime.now();
         }
     }

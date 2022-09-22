@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main
@@ -41,11 +42,14 @@ public class Main
             System.err.println("hiba");
         }
 
-        System.out.println(festmenyek2);
+
         for (int i = 0; i < 20; i++)
         {
-            festmenyek2.getFestmenyek().get(i);
+          int rnd = (int)((Math.random() * (festmenyek.getFestmenyek().size() - 1)) + 1);
+          festmenyek.getFestmenyek().get(rnd).licit();
         }
+
+        System.out.print(festmenyek.getFestmenyek().size());
 
 
 
